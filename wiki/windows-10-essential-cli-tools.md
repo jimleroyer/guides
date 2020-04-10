@@ -7,7 +7,8 @@ to work with on Windows 10.
   - [Your Windows Terminal](#your-windows-terminal)
   - [Scoop -- your package manager](#scoop----your-package-manager)
   - [aria2 -- your download manager](#aria2----your-download-manager)
-  - [pshazz -- your shell prompt](#pshazz----your-shell-prompt)
+  - [starship -- your shell prompt](#starship----your-shell-prompt)
+  - [pshazz -- your shell prompt (alternative)](#pshazz----your-shell-prompt-alternative)
   - [z.lua -- your directory compass](#zlua----your-directory-compass)
   - [PSReadLine -- your line auto-completion](#psreadline----your-line-auto-completion)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
@@ -97,7 +98,20 @@ is made (this will continue to seed after the download until you stop the comman
 aria2c.exe --bt-force-encryption true --seed-ratio=0.0 -T .\ubuntu-19.10-desktop-amd64.iso.torrent
 ```
 
-## [pshazz](https://github.com/lukesampson/pshazz) -- your shell prompt
+## [starship](https://starship.rs) -- your shell prompt
+
+> ℹ️ **A must-have** for its speed, multi-modules support and high customizability.
+
+```powershell
+scoop install starship
+```
+
+Easy to use and extend, this is the prompt that will display necessary information in a
+smart fashion only when it needs to.
+
+![starship CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/starship.mp4)
+
+## [pshazz](https://github.com/lukesampson/pshazz) -- your shell prompt (alternative)
 
 > Pshazz extends your powershell profile to add things like
 >
