@@ -8,7 +8,6 @@ to work with on Windows 10.
   - [Scoop -- your package manager](#scoop----your-package-manager)
   - [aria2 -- your download manager](#aria2----your-download-manager)
   - [starship -- your shell prompt](#starship----your-shell-prompt)
-  - [pshazz -- your shell prompt (alternative)](#pshazz----your-shell-prompt-alternative)
   - [z.lua -- your directory compass](#zlua----your-directory-compass)
   - [PSReadLine -- your line auto-completion](#psreadline----your-line-auto-completion)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
@@ -100,7 +99,7 @@ aria2c.exe --bt-force-encryption true --seed-ratio=0.0 -T .\ubuntu-19.10-desktop
 
 ## [starship](https://starship.rs) -- your shell prompt
 
-> ℹ️ **A must-have** for its speed, multi-modules support and high customizability.
+> ℹ️ **A must-have** for its **speed**, multi-modules support and high customizability.
 
 ```powershell
 scoop install starship
@@ -110,19 +109,6 @@ Easy to use and extend, this is the prompt that will display necessary informati
 smart fashion only when it needs to.
 
 ![starship CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/starship.gif)
-
-## [pshazz](https://github.com/lukesampson/pshazz) -- your shell prompt (alternative)
-
-> Pshazz extends your powershell profile to add things like
->
-> - A nicer prompt, including Git and Mercurial info
-> - **Git and Mercurial tab completion**
-> - An SSH helper that lets you **never enter your private key password again**
-> - Sensible aliases, and an easy way to add your own aliases and remove ones you don't like
-
-```powershell
-scoop install pshazz
-```
 
 > ℹ️ **A must-have** for its *git* command-line auto-completion and branch status.
 
