@@ -110,10 +110,6 @@ smart fashion only when it needs to.
 
 ![starship CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/starship.gif)
 
-> ℹ️ **A must-have** for its *git* command-line auto-completion and branch status.
-
-![pshazz CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/CLI-pshazz.png)
-
 ## [z.lua](https://github.com/skywind3000/z.lua) -- your directory compass
 
 > Tracks your most used directories, based on number of previously run commands. After a short learning phase, z will take you to the most popular directory that matches all of the regular expressions given on the command line. You can use Tab-Completion / Intellisense to pick directories that are not the first choice.
