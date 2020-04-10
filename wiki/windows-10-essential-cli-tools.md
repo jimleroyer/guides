@@ -109,7 +109,7 @@ scoop install starship
 Easy to use and extend, this is the prompt that will display necessary information in a
 smart fashion only when it needs to.
 
-![starship CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/starship.mp4)
+![starship CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/starship.gif)
 
 ## [pshazz](https://github.com/lukesampson/pshazz) -- your shell prompt (alternative)
 
