@@ -16,7 +16,7 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [PSReadLine -- your line auto-completion](#psreadline----your-line-auto-completion)
   - [ripgrep -- your regex recursive search tool](#ripgrep----your-regex-recursive-search-tool)
   - [bat -- your cat clone, with wings](#bat----your-cat-clone-with-wings)
-  - [fd](#fd)
+  - [fd -- your file finder](#fd----your-file-finder)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
 - [The extra tools](#the-extra-tools)
   - [procs](#procs)
@@ -230,7 +230,7 @@ to indicate the recent git additions.
 
 ![bat CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/bat.png)
 
-## [fd](https://github.com/sharkdp/fd)
+## [fd](https://github.com/sharkdp/fd) -- your file finder
 
 > fd is a simple, fast and user-friendly alternative to find.
 
