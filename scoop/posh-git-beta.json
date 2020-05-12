@@ -1,0 +1,21 @@
+{
+    "homepage": "http://dahlbyk.github.io/posh-git/",
+    "description": "A PowerShell module which provides Git/PowerShell integration.",
+    "version": "1.0.0-beta4",
+    "license": "MIT",
+    "url": "https://github.com/dahlbyk/posh-git/archive/v1.0.0-beta4-8-g14e274d.zip",
+    "hash": "efe378bd6318941fbc41730881def9524e4418877482e28df1a750e7eec65fd3",
+    "extract_dir": "posh-git-14e274d4f3701e1f543d9bc39ac12e9dfad04895\\src",
+    "psmodule": {
+        "name": "posh-git"
+    },
+    "checkver": {
+        "github": "https://github.com/dahlbyk/posh-git"
+    },
+    "autoupdate": {
+        "url": "https://github.com/dahlbyk/posh-git/archive/v$version.zip",
+        "extract_dir": "posh-git-$version\\src"
+    },
+    "notes": "See usage: https://github.com/dahlbyk/posh-git#using-posh-git",
+    "post_install": "Add-PoshGitToProfile"
+}

@@ -15,8 +15,11 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [z.lua -- your directory compass](#zlua----your-directory-compass)
   - [PSReadLine -- your line auto-completion](#psreadline----your-line-auto-completion)
   - [ripgrep -- your regex recursive search tool](#ripgrep----your-regex-recursive-search-tool)
+  - [bat -- your cat clone, with wings](#bat----your-cat-clone-with-wings)
+  - [fd](#fd)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
 - [The extra tools](#the-extra-tools)
+  - [procs](#procs)
   - [docker -- your container tool](#docker----your-container-tool)
   - [GitHub CLI](#github-cli)
   - [gitignore (from [psutils](https://github.com/lukesampson/psutils))](#gitignore-from-psutils)
@@ -207,6 +210,38 @@ There is no alternative on Windows installed by default. You could use
 but it is not recursive nor supports the full range of features and performance 
 the [ripgrep](https://github.com/BurntSushi/ripgrep) offers.
 
+## [bat](https://github.com/sharkdp/bat) -- your cat clone, with wings
+
+> ℹ️ **A must-have** for its file highlighting, invisible characters display, 
+> integration with git and expanded features on top of the original cat.
+
+```powershell
+scoop install bat
+```
+
+For example, the following bare minimum command invocation...
+
+```powershell
+❯ bat .\windows-10-essential-cli-tools.md
+```
+
+...produces this highlighted Markdown output. Note the `+` signs on the left
+to indicate the recent git additions.
+
+![bat CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/bat.png)
+
+## [fd](https://github.com/sharkdp/fd)
+
+> fd is a simple, fast and user-friendly alternative to find.
+
+The standard way to find files on Windows is to use the search bar. That does
+not quite cut it while on the CLI. This Rust-written powered utility
+will provide fast and viable alternative to its `find` Linux counterpart.
+
+```powershell
+scoop install fd
+```
+
 ## [git](https://git-scm.com/) -- your version control + git auto-completion
 
 The popular distributed version control is installable via scoop.
@@ -230,6 +265,18 @@ The second command will automatically add the necessary posh-git import to your
 
 A set of tools that might not be for all developers but quite nice to have on 
 the CLI.
+
+## [procs](https://github.com/dalance/procs)
+
+> A modern replacement for ps written in Rust.
+
+The PowerShell Cmdlets such as `get-process` are nice but they won't
+provide an overview of the current process with a tree-like display or a `top`
+equivalent. The `procs` CLI tool will do just that.
+
+```powershell
+scoop install procs
+```
 
 ## [docker](https://www.docker.com/) -- your container tool
 
