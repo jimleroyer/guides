@@ -1,20 +1,27 @@
-This is a guide for a proper Windows 10 CLI development environment. Yeah, Linux and
-MacOSX are pretty awesome in there... but Microsoft has made some tremendeous improvements
-in that direction. So either get on the ride with me for a comfy-slipper CLI
-to work with on Windows 10.
+This is a guide for a proper Windows 10 CLI development environment. It is biased
+on tools that I mostly used such as Git, GitHub, PowerShell, AWS. I first use this
+guide for myself, so that I rememember what to setup on new reinstallation.
+
+Our Linux and MacOSX relatives are quite awesome in their ways... but Microsoft
+has made some tremendeous improvements in the past years. Get on the ride with me
+if you want a comfy-slipper CLI to work with on Windows 10.
 
 - [The essential tools](#the-essential-tools)
-  - [Your Windows Terminal](#your-windows-terminal)
+  - [First things, first](#first-things-first)
   - [Scoop -- your package manager](#scoop----your-package-manager)
+  - [Your Windows Terminal](#your-windows-terminal)
   - [aria2 -- your download manager](#aria2----your-download-manager)
   - [starship -- your shell prompt](#starship----your-shell-prompt)
   - [z.lua -- your directory compass](#zlua----your-directory-compass)
   - [PSReadLine -- your line auto-completion](#psreadline----your-line-auto-completion)
+  - [ripgrep -- your regex recursive search tool](#ripgrep----your-regex-recursive-search-tool)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
-  - [docker -- your container tool](#docker----your-container-tool)
 - [The extra tools](#the-extra-tools)
+  - [docker -- your container tool](#docker----your-container-tool)
   - [GitHub CLI](#github-cli)
   - [gitignore (from [psutils](https://github.com/lukesampson/psutils))](#gitignore-from-psutils)
+  - [Nodejs + npm](#nodejs--npm)
+  - [Yeoman](#yeoman)
   - [AWS CLI](#aws-cli)
   - [touch](#touch)
   - [PsHosts](#pshosts)
@@ -37,6 +44,36 @@ to work with on Windows 10.
 These are the first and esssential CLI tools to install for a productive developer's experience
 on Windows 10.
 
+## First things, first
+
+Make sure you have the latest version of PowerShell installed. My Windows 10 installation
+bundled version 5.1 but the latest at the moment of this writing is 7.1. Check out your
+version by opening a PowerShell session and executing that command:
+
+```powershell
+Get-Host | Select-Object Version
+```
+
+If you don't have version 7, you can install it with this command.
+
+```powershell
+Invoke-Expression "& { $(Invoke-Restmethod https://aka.ms/install-powershell.ps1) } -UseMSI -Preview"
+```
+
+## [Scoop](https://scoop.sh/) -- your package manager
+
+> Scoop installs the tools you know and love.
+
+```powershell
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+```
+
+Scoop is a package manager for Windows 10, quite similar to MacOSX HomeBrew in spirit. There
+are other package managers such as [Chocolatey](https://chocolatey.org/). From my observations,
+Scoop is more oriented to devtools whereas Chocolatey is more to general users' tools. For
+example, you can install Kotlin with Scoop but not with Chocolatey... but you can install
+the Windows Terminal with the latter! I prefer Scoop so far for its Homebrew feeling.
+
 ## Your [Windows Terminal](https://github.com/microsoft/terminal)
 
 > ℹ️ **A must-have** for its rich CLI experience that includes updated and modern features, bringing
@@ -48,13 +85,12 @@ command-line community including support for tabs, rich text, globalization, con
 theming & styling, and more.
 
 At this time, the modern version of the Windows terminal is not yet available in Windows 10
-default installation. So you need to [head to the Microsoft Store and install it from there](https://aka.ms/windowsterminal).
+default installation. You could install it by [heading to the Microsoft Store and install it from there](https://aka.ms/windowsterminal)...
 
-If you already installed  [Chocolatey](https://chocolatey.org/) on your system, you can use
-the following command, but if you don't have, get it through the [Microsoft Store](https://aka.ms/windowsterminal) instead, as we'll install Scoop next anyway.
+...but let's try Scoop, which we just installed:
 
 ```powershell
-choco install microsoft-windows-terminal
+scoop install windows-terminal
 ```
 
 To learn more on how to use and configure the terminal, head to
@@ -62,19 +98,8 @@ To learn more on how to use and configure the terminal, head to
 To learn about how to customize the background image or colors, [head
 in that other direction](https://www.howtogeek.com/426346/how-to-customize-the-new-windows-terminal-app/).
 
-## [Scoop](https://scoop.sh/) -- your package manager
-
-> Scoop installs the tools you know and love
-
-```powershell
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-```
-
-Scoop is a package manager for Windows 10, quite similar to MacOSX HomeBrew in spirit. There
-are other package managers such as [Chocolatey](https://chocolatey.org/). From my observations,
-Scoop is more oriented to devtools whereas Chocolatey is more to general users' tools. For
-example, you can install Kotlin with Scoop but not with Chocolatey... but you can install
-the Windows Terminal with the latter! I prefer Scoop so far for its Homebrew feeling.
+You can find [my own configuration here](https://gist.github.com/jimleroyer/f8be8681d01097b5c4dc765823c0bcca) for inspiration and some
+sensible key bindings default.
 
 ## [aria2](https://aria2.github.io) -- your download manager
 
@@ -146,7 +171,7 @@ as VSCode. Open an **admin-elevated regular command terminal (non-PowerShell)** 
 the latest version of PSReadLine.
 
 ```cmd
-powershell -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherCheck -AllowPrerelease"
+"C:\Program Files\PowerShell\7-preview\preview\pwsh-preview.cmd" -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherCheck -AllowPrerelease"
 ```
 
 You might know or discover that PSReadline is already installed on Windows 10. It does
@@ -168,6 +193,20 @@ $PSReadLine = "`n# PSReadline (Better tab completion)`nSet-PSReadlineKeyHandler 
 Add-Content $PROFILE.CurrentUserCurrentHost $PSReadLine
 ```
 
+## [ripgrep](https://github.com/BurntSushi/ripgrep) -- your regex recursive search tool
+
+> ℹ️ **A must-have** for its **expanded features**, multi-platform support and
+> overall sheer **performance**.
+
+```powershell
+scoop install ripgrep
+```
+
+There is no alternative on Windows installed by default. You could use
+[the `Select-String` Powershell cmdlet](https://antjanus.com/blog/web-development-tutorials/how-to-grep-in-powershell/)
+but it is not recursive nor supports the full range of features and performance 
+the [ripgrep](https://github.com/BurntSushi/ripgrep) offers.
+
 ## [git](https://git-scm.com/) -- your version control + git auto-completion
 
 The popular distributed version control is installable via scoop.
@@ -187,6 +226,11 @@ Add-PoshGitToProfile
 The second command will automatically add the necessary posh-git import to your
 `$profile.CurrentUserCurrentHost` file.
 
+# The extra tools
+
+A set of tools that might not be for all developers but quite nice to have on 
+the CLI.
+
 ## [docker](https://www.docker.com/) -- your container tool
 
 The one container solution that developers can't contain their jor for. ;)
@@ -194,10 +238,6 @@ The one container solution that developers can't contain their jor for. ;)
 ```powershell
 scoop install docker
 ```
-
-# The extra tools
-
-A set of tools that are not essentials but quite nice to have on the CLI.
 
 ## GitHub CLI
 
@@ -236,6 +276,24 @@ generate gitignore entries for both tools:
 
 ```powershell
 gitignore vim kotlin > .gitignore
+```
+
+## [Nodejs + npm](nodejs.org)
+
+If you are not a node developer, you'll still need nodejs installed eventually
+as so many slick tools are now written with it. 
+
+```powershell
+scoop install nodejs
+```
+
+## [Yeoman](yeoman.io)
+
+Yeoman is that one project scaffolding tool that will get you started real quick
+in your favorite programming language. 
+
+```powershell
+npm install -g yo
 ```
 
 ## AWS CLI
@@ -408,3 +466,4 @@ tools whatsoever.
 # Credits
 
 - Mattie Behrens for pointing out PSReadLine in his article titled [Making Development with PowerShell More Hospitable](https://spin.atomicobject.com/2019/05/09/powershell-tools/)
+- Emanuele Bartolesi for nice tricks on Windows Terminal customization with [How to customize the new Windows Terminal with Visual Studio Code](https://dev.to/expertsinside/how-to-customize-the-new-windows-terminal-with-visual-studio-code-56b1)
