@@ -20,13 +20,14 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
 - [The extra tools](#the-extra-tools)
   - [procs](#procs)
+  - [touch](#touch)
+  - [nushell](#nushell)
   - [docker -- your container tool](#docker----your-container-tool)
   - [GitHub CLI](#github-cli)
   - [gitignore (from [psutils](https://github.com/lukesampson/psutils))](#gitignore-from-psutils)
   - [Nodejs + npm](#nodejs--npm)
   - [Yeoman](#yeoman)
   - [AWS CLI](#aws-cli)
-  - [touch](#touch)
   - [PsHosts](#pshosts)
   - [sudo (from psutils)](#sudo-from-psutils)
 - [The Windows Subsystem for Linux](#the-windows-subsystem-for-linux)
@@ -278,6 +279,27 @@ equivalent. The `procs` CLI tool will do just that.
 scoop install procs
 ```
 
+## [touch](https://github.com/lukesampson/psutils)
+
+The classic POSIX command, popularized by Gunther in a ding dong moment.
+
+```powershell
+scoop install touch
+```
+
+## [nushell](https://github.com/nushell/nushell)
+
+> ℹ️ **A promising shell** that brings modernity to your everyday CLI home. It
+> combines the pragmatism of veteran shells like bash while borrowing 
+> innovative ideas from Powershell, functional & system programming. Maturity
+> is not its forte at this point but it's quite usable. Leveraging Rust and its
+> speed, this means it's also cross-platform. Definitely worth to keep an eye 
+> on its future.
+
+```powershell
+scoop install nu
+```
+
 ## [docker](https://www.docker.com/) -- your container tool
 
 The one container solution that developers can't contain their jor for. ;)
@@ -349,14 +371,6 @@ This will get the AWS command-line in your shell environment.
 
 ```powershell
 scoop install aws
-```
-
-## [touch](https://github.com/lukesampson/psutils)
-
-The classic POSIX command, popularized by Gunther in a ding dong moment.
-
-```powershell
-scoop install touch
 ```
 
 ## [PsHosts](https://github.com/richardszalay/pshosts)
