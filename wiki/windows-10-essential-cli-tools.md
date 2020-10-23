@@ -20,6 +20,7 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
 - [The extra tools](#the-extra-tools)
   - [procs](#procs)
+  - [tokei](#tokei)
   - [touch](#touch)
   - [nushell](#nushell)
   - [docker -- your container tool](#docker----your-container-tool)
@@ -69,6 +70,7 @@ Invoke-Expression "& { $(Invoke-Restmethod https://aka.ms/install-powershell.ps1
 > Scoop installs the tools you know and love.
 
 ```powershell
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 ```
 
@@ -77,6 +79,14 @@ are other package managers such as [Chocolatey](https://chocolatey.org/). From m
 Scoop is more oriented to devtools whereas Chocolatey is more to general users' tools. For
 example, you can install Kotlin with Scoop but not with Chocolatey... but you can install
 the Windows Terminal with the latter! I prefer Scoop so far for its Homebrew feeling.
+
+You will probably want to add custom repositories that are not part of the core Scoop
+manifest repository. The `extras` bucket is the most popular one and I highly recommend
+configuring it.
+
+```powershell
+scoop bucket add extras
+```
 
 ## Your [Windows Terminal](https://github.com/microsoft/terminal)
 
@@ -278,6 +288,21 @@ equivalent. The `procs` CLI tool will do just that.
 ```powershell
 scoop install procs
 ```
+
+## [tokei](https://github.com/XAMPPRocky/tokei)
+
+> Tokei is a program that displays statistics about your code. Tokei will show 
+> the number of files, total lines within those files and code, comments, and 
+> blanks grouped by language.
+
+Produces exhaustive statistics around your code repository. Evil managers will count
+how much new lines were added while great developers will try to minimize these.
+
+```powershell
+scoop install tokei
+```
+
+![tokei CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/tokei.png)
 
 ## [touch](https://github.com/lukesampson/psutils)
 
