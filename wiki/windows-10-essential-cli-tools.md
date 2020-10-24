@@ -18,6 +18,7 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [bat -- your cat clone, with wings](#bat----your-cat-clone-with-wings)
   - [fd -- your file finder](#fd----your-file-finder)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
+  - [tldr](#tldr)
 - [The extra tools](#the-extra-tools)
   - [procs](#procs)
   - [tokei](#tokei)
@@ -271,6 +272,19 @@ Add-PoshGitToProfile
 
 The second command will automatically add the necessary posh-git import to your
 `$profile.CurrentUserCurrentHost` file.
+
+## [tldr](https://isacikgoz.me/tldr/)
+
+> Community driven man pages improved with smart user interaction. tldr++ seperates itself from any other tldr client with convenient user guidance feature.
+
+The tldr command is the functional equivalent of man pages: no longer you need to read
+pages and pages to make basic usage of a command. This helper provide you with most
+common use cases for using documented commands and helps you fill in proper command
+parameters once you selected a use case. **I can't stress it enough but it's super helpful.**
+
+```powershell
+scoop install tldr
+```
 
 # The extra tools
 
