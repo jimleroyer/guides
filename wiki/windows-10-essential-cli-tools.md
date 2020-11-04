@@ -1,6 +1,6 @@
 This is a guide for a proper Windows 10 CLI development environment. It is biased
 on tools that I mostly used such as Git, GitHub, PowerShell, AWS. I first use this
-guide for myself, so that I rememember what to setup on new reinstallation.
+guide for myself, so that I remember what to setup on new reinstallation.
 
 Our Linux and MacOSX relatives are quite awesome in their ways... but Microsoft
 has made some tremendeous improvements in the past years. Get on the ride with me
@@ -18,10 +18,11 @@ if you want a comfy-slipper CLI to work with on Windows 10.
   - [bat -- your cat clone, with wings](#bat----your-cat-clone-with-wings)
   - [fd -- your file finder](#fd----your-file-finder)
   - [git -- your version control + git auto-completion](#git----your-version-control--git-auto-completion)
-  - [tldr](#tldr)
+  - [tldr -- your straight talkin' man pages](#tldr----your-straight-talkin-man-pages)
 - [The extra tools](#the-extra-tools)
   - [procs](#procs)
   - [tokei](#tokei)
+  - [onefetch](#onefetch)
   - [touch](#touch)
   - [nushell](#nushell)
   - [docker -- your container tool](#docker----your-container-tool)
@@ -53,7 +54,7 @@ on Windows 10.
 ## First things, first
 
 Make sure you have the latest version of PowerShell installed. My Windows 10 installation
-bundled version 5.1 but the latest at the moment of this writing is 7.1. Check out your
+bundled version `5.1` but the latest at the moment of this writing is `7.1.0-rc.2`. Check out your
 version by opening a PowerShell session and executing that command:
 
 ```powershell
@@ -273,14 +274,14 @@ Add-PoshGitToProfile
 The second command will automatically add the necessary posh-git import to your
 `$profile.CurrentUserCurrentHost` file.
 
-## [tldr](https://isacikgoz.me/tldr/)
+## [tldr](https://isacikgoz.me/tldr/) -- your straight talkin' man pages
 
 > Community driven man pages improved with smart user interaction. tldr++ seperates itself from any other tldr client with convenient user guidance feature.
 
-The tldr command is the functional equivalent of man pages: no longer you need to read
+The `tldr` command is the functional equivalent of man pages: no longer you need to read
 pages and pages to make basic usage of a command. This helper provide you with most
 common use cases for using documented commands and helps you fill in proper command
-parameters once you selected a use case. **I can't stress it enough but it's super helpful.**
+parameters once you selected a use case. **I can't stress it enough but this tool super helpful.**
 
 ```powershell
 scoop install tldr
@@ -317,6 +318,21 @@ scoop install tokei
 ```
 
 ![tokei CLI example](https://github.com/jimleroyer/guides/raw/master/images/windows-10-cli-essentials/tokei.png)
+
+## [onefetch](https://github.com/o2sh/onefetch)
+
+> Onefetch is a command-line Git information tool written in Rust that will 
+> display project information and code statistics about your Git repository 
+> directly on your terminal.
+
+Produces summary statistics around your *git* repository, i.e. dominant language but
+also number of commits, PRs, prolific authors and code license.
+
+```powershell
+scoop install onefetch
+```
+
+![onefetch CLI example](https://raw.githubusercontent.com/o2sh/onefetch/master/assets/go.png)
 
 ## [touch](https://github.com/lukesampson/psutils)
 
